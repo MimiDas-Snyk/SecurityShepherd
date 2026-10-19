@@ -423,7 +423,12 @@ if (request.getSession() != null)
 		  }
 		});
 		</script>
-
+/**
+aaa
+bbb
+ccc
+test for CCI by adding lines
+**/
 	<% //Hide UI Scripts from Users (Blocked at session level anyway, just stops spiders finding the links)
 		if (userRole.compareTo("admin") == 0){ %>
 	<script src="js/adminToggle.js"></script>

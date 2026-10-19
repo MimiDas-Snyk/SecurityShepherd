@@ -1,0 +1,22 @@
+trigger:
+- dev
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'SNYKConnection'
+    testType: 'code'
+    codeSeverityThreshold: 'high'
+    failOnIssues: false
+    projectName: 'MimiDas-Snyk/SecurityShepherd'
+    organization: 'mimi.das'
